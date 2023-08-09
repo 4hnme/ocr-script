@@ -35,11 +35,14 @@ else
   if [[ $output == "" ]]; then
     echo "error: selection was cancelled"
   else
-    # open transcribed text in your editor of choice
-    $TERMINAL -e $SHELL -c "echo '$output' | $EDITOR"
-    # $TERMINAL --title="Tesseract OCR" -e $SHELL -c "echo '$output' | $EDITOR"
+    # create temporary file for storing transcribed text
+    printf '%b ' $output > /tmp/ocr.txt
+    # open the text file in your editor of choice
+    $TERMINAL -e $SHELL -c "$EDITOR /tmp/ocr.txt"
+    # $TERMINAL --title="Tesseract OCR" -e $SHELL -c "$EDITOR /tmp/ocr.txt"
     #                 ^
     #     works only for Alacritty
+    rm /tmp/ocr.txt
   fi
 
   # removing temporary image we created earlier
