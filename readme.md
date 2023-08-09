@@ -7,3 +7,4 @@ a small shell script for `Tesseract OCR` that automates taking screenshots with 
 * [Tesseract OCR](https://github.com/tesseract-ocr/tesseract)
 * [ImageMagick](https://github.com/ImageMagick/ImageMagick)
 * [maim](https://github.com/naelstrof/maim)
+* [dmune](http://tools.suckless.org/dmenu/)
